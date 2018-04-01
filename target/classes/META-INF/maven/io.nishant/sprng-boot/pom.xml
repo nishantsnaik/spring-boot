@@ -34,6 +34,22 @@
                 <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
         </plugin>
+        <plugin>
+	        <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-maven-plugin</artifactId>
+		    <version>${spring-boot-version}</version>
+		    <configuration>
+                <executable>true</executable>
+                <mainClass>io.nishant.api.Application</mainClass>
+            </configuration>
+	        <executions>
+	        	<execution>
+		            <goals>
+		            	<goal>repackage</goal>
+		            </goals>
+		        </execution>
+	        </executions>
+        </plugin>
 	    </plugins>
   </build>
 
@@ -48,8 +64,15 @@
 	<dependency>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-data-jpa</artifactId>
-	    <version>1.5.1.RELEASE</version>
+	    <version>${spring-boot-version}</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-devtools</artifactId>
+	    <version>${spring-boot-version}</version>
+	</dependency>
+	
 		
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
